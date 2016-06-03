@@ -9,13 +9,13 @@
                               
   =============================================================================
 
-  Support the FightDystopia campaign by installing this banner on your site.
+  Support the NoGlobalWarrant campaign by installing this banner on your site.
 
   <sina@eff.org> for support
 
   =============================================================================
 
-  @source: https://github.com/EFForg/fightdystopia-banner
+  @source: https://github.com/EFForg/ngw-banner
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
@@ -65,7 +65,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
   widgetConfig.callOnly = widgetConfig.callOnly || false;
   widgetConfig.startAsMinimized = widgetConfig.startAsMinimized || false;
   widgetConfig.disableDate = widgetConfig.disableDate || false;
-  widgetConfig.campaign = widgetConfig.campaign || 'fightdystopia';
+  widgetConfig.campaign = widgetConfig.campaign || 'noglobalwarrants';
   widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || 172800;
   widgetConfig.overrideLocation = widgetConfig.overrideLocation || false;
 
@@ -179,9 +179,9 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
   // Define campaigns
   var campaign = {
-    fightdystopia: {
-      cookieName: 'fightdystopia_hasseen',
-      locationCookieName: 'fightdystopia_locationb',
+    noglobalwarrants: {
+      cookieName: 'noglobalwarrants_hasseen',
+      locationCookieName: 'noglobalwarrants_locationb',
       runDate: {
         day: 21,
         month: 6, // Use natural month, e.g. January = 1
@@ -368,7 +368,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
               setCookie(activeCampaign.cookieName, '{"minimized": true}',
                 widgetConfig.cookieTimeout);
             } else {
-              iframeContainer.style.height = '350px';
+              iframeContainer.style.height = '300px';
               that.minimized = false;
               footerOverlay.style.display = 'none';
               openButton.style.display = 'none';
