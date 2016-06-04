@@ -68,17 +68,6 @@ a:hover {
     color: #f2c45a;
 }
 
-#banner-container {
-    max-width:1080px;
-    margin: 0 auto;
-}
-
-@media (min-width: 1080px){
-    #second-slide {
-        max-width: 1080px;
-    }
-}
-
 /* =====================================*/
 /* Mobile banner */
 /* =====================================*/
@@ -95,6 +84,22 @@ a:hover {
 
 
 /* =====================================*/
+/* Container */
+/* =====================================*/
+
+#banner-container {
+    max-width:1080px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@media (min-width: 1080px){
+    #second-slide {
+        max-width: 1080px;
+    }
+}
+
+/* =====================================*/
 /* Left side of banner */
 /* =====================================*/
 
@@ -108,8 +113,17 @@ a:hover {
     text-align: right;
 }
 
-.leftsidecontainer img {
-  max-width: 200px;
+@media (min-width: 1100px) {
+  .leftsidecontainer img {
+    max-width: 200px;
+  }
+}
+@media (max-width: 1099px) {
+  .leftsidecontainer img {
+    max-width: 150px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
 }
 
 /* =====================================*/
@@ -167,12 +181,21 @@ a:hover {
   border-color: #B0F910;
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
- .rightsidecontainer {
-    margin: 0 25px 0 15px;
-  } 
+@media (min-width: 768px) and (max-width: 1100px) {
+ .rightsidecontainer p {
+    font-size: 16px;
+ }
+ .btn-green.btn-lg {
+  font-size: 16px;
+  font-weight:bold;
+ }
 }
 
+@media (min-width: 768px) and (max-width: 860px) {
+  .rightsidecontainer {
+   margin-top: 30px;
+  }
+}
 
 
 /*
@@ -246,11 +269,6 @@ a:hover {
 }
 
 @media (max-width: 900px){
-  .calls-counter, .emails-counter {
-    font-size:13px;
-    letter-spacing:0.5px;
-  }
-
 }
 
 /* See http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/#Height if we start having problems*/
