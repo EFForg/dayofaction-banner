@@ -83,26 +83,6 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
     document.cookie = c_name + '=' + c_value;
   }
 
-  function setResizeListener() {
-    if (window.addEventListener) window.addEventListener('resize', function() {
-        var w = window,
-          d = document,
-          e = d.documentElement,
-          g = d.getElementsByTagName('body')[0],
-          x = w.innerWidth || e.clientWidth || g.clientWidth,
-          y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-       if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
-          if(window.tdwfbResizeCallback) {
-            clearTimeout(window.tdwfbResizeCallback);
-          }
-          window.tdwfbResizeCallback = setTimeout(function () {
-              that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});
-              windowWidth = x;
-          }, 50);
-        }
-    }, false);
-  }
-
   function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(' ' + c_name + '=');
@@ -369,7 +349,23 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
                 widgetConfig: widgetConfig
               });
 
-              setResizeListener();
+            if (window.addEventListener) window.addEventListener('resize', function() {
+                var w = window,
+                  d = document,
+                  e = d.documentElement,
+                  g = d.getElementsByTagName('body')[0],
+                  x = w.innerWidth || e.clientWidth || g.clientWidth,
+                  y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+               if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
+                  if(window.tdwfbResizeCallback) {
+                    clearTimeout(window.tdwfbResizeCallback);
+                  }
+                  window.tdwfbResizeCallback = setTimeout(function () {
+                      that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});
+                      windowWidth = x;
+                  }, 50);
+                }
+            }, false);
           }
         });
       }
