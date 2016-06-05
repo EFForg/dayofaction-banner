@@ -9,13 +9,13 @@
                               
   =============================================================================
 
-  Support the FightDystopia campaign by installing this banner on your site.
+  Support the NoGlobalWarrants.org campaign by installing this banner on your site.
 
   <sina@eff.org> for support
 
   =============================================================================
 
-  @source: https://github.com/EFForg/fightdystopia-banner
+  @source: https://github.com/EFForg/ngw-banner
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
