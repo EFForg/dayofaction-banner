@@ -172,6 +172,11 @@ a:hover {
   -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+.btn-green:active, .btn-green:focus {
+  background-color: transparent;
+  color: #B0F910;
+  border: 1px solid #B0F910;
+}
 .btn-green:hover {
   background-color: #B0F910;
   color: #08A013;

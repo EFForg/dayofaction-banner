@@ -42,7 +42,7 @@
 */
 
 // Wrap widget in function to protect scope
-var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
+var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : {};
 
 (function (window, widgetConfig) {
   var JSON;JSON||(JSON={});
@@ -321,17 +321,6 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           widgetConfig.callOnly + '&iso=' + isoCode + '&greeting=' +
           widgetConfig.greeting;
 
-        if ((isoCode === 'US' && !widgetConfig.overrideLocation) ||
-            widgetConfig.overrideLocation === 'usa') {
-          // Set the source of the iframe to the configured show_style type
-          iframe.src = us;
-        } else if ((isoCode !== 'US' && !widgetConfig.overrideLocation) ||
-            widgetConfig.overrideLocation === 'international') {
-          iframe.src = ASSET_URL + activeCampaign.config.show_style +
-            '_international.html?firstTime=' + firstTime + '&iso=' + isoCode +
-            '&greeting=' + widgetConfig.greeting;
-        }
-
         iframeContainer.appendChild(iframe);
 
         var that = this;
@@ -463,4 +452,4 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
   } else {
     return false;
   }
-})(window, _tdwfb_config);
+})(window, _banner_config);
