@@ -73,13 +73,10 @@ a:hover {
 /* =====================================*/
 
 .mobile-banner.visible-xs {
-  margin-top:5px;
   height: 100%;
 }
 .mobile-banner img {
-  height: 89px;
-  margin: 0 auto;
-  margin-bottom:10px;
+  max-width:90%;
 }
 
 
@@ -204,6 +201,7 @@ a:hover {
 
 #banner-container.footer {
   height: 50px;
+  max-width:100%;
 }
 
 #homepage_link {
@@ -211,6 +209,7 @@ a:hover {
   color: #B0F910;
   font-weight: bold;
   text-align: right;
+  margin-right:45px;
 }
 
 .footer .leftsidecontainer {
