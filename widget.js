@@ -54,7 +54,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
   widgetConfig.startAsMinimized = widgetConfig.startAsMinimized || false;
   widgetConfig.disableDate = widgetConfig.disableDate || false;
   widgetConfig.campaign = widgetConfig.campaign || 'noglobalwarrants';
-  widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || 172800;
+  widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || null;
 
   function debug() {
     if (widgetConfig.debug) {
