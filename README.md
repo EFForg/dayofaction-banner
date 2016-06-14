@@ -27,7 +27,7 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 <script type="text/javascript">
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-    e.src = document.location.protocol + '//efforg.github.io/ngw-banner/widget.min.js';
+    e.src = 'https://www.eff.org/ngw/widget.min.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
 </script>
@@ -50,7 +50,7 @@ You can configure the banner using a javascript object:
   };
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-    e.src = document.location.protocol + '//efforg.github.io/ngw-banner/widget.min.js';
+    e.src = 'https://www.eff.org/ngw/widget.min.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
 </script>
