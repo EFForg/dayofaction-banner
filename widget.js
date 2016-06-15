@@ -71,8 +71,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
   if (widgetConfig.localAssets) {
     ASSET_URL = '../banner_content/';
   } else {
-    ASSET_URL = '../banner_content/' +
-      ''; // TODO: Update remote asset URL
+    ASSET_URL = 'https://www.eff.org/ngw/banner_content/';
   }
 
   // Cookie helpers, taken from w3schools
