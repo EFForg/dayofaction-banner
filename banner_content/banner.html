@@ -13,7 +13,12 @@
     <script type="text/javascript" src="js/easyXDM.min.js"></script>
     <script type='text/javascript' src="js/modernizr.min.js"></script>
     <script type='text/javascript' src="js/css3-mediaqueries.js"></script>   
-     
+     <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var animate = document.getElementById("animate");
+        animate.classList.add("loaded");
+      });
+    </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script type='text/javascript' src="js/html5.js"></script>
@@ -29,7 +34,7 @@
             <div class="leftsidecontainer">
               <div class="logotext">
                   <a href="https://NoGlobalWarrants.org" target="_parent">
-                      <img src="imgs/fd-icon.png" class="img-responsive" />
+                      <img src="imgs/fd-icon.png" id="animate" class="img-responsive" />
                   </a>
               </div>
             </div>

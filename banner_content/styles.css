@@ -138,6 +138,19 @@ a:hover {
     }
 }
 
+
+/* animation */
+
+.leftsidecontainer img {
+    transform: translateY(-200%);
+    transition: all 1s linear;
+}
+
+.leftsidecontainer img.loaded {
+    transform: translateY(0%);
+    transition: all 1s linear;
+}
+
 /* =====================================*/
 /* Left side of banner */
 /* =====================================*/
