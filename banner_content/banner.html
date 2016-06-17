@@ -14,9 +14,14 @@
     <script type='text/javascript' src="js/modernizr.min.js"></script>
     <script type='text/javascript' src="js/css3-mediaqueries.js"></script>   
      <script type="text/javascript">
+
       document.addEventListener("DOMContentLoaded", function(event) {
-        var animate = document.getElementById("animate");
-        animate.classList.add("loaded");
+       var animate = document.getElementById("animate");
+       animate.classList.add("not-loaded");
+        window.setTimeout(function () {
+          animate.classList.remove("not-loaded");
+          animate.classList.add("loaded");
+        }, 0);
       });
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -141,9 +141,9 @@ a:hover {
 
 /* animation */
 
-.leftsidecontainer img {
+.leftsidecontainer img.not-loaded {
     transform: translateY(-200%);
-    transition: all 1s linear;
+    transition: all 0s linear;
 }
 
 .leftsidecontainer img.loaded {
