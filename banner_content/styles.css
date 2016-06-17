@@ -174,7 +174,8 @@ a:hover {
 .rightside h2 {
   font-family: 'Rubik';
   font-size:28px;
-  font-weight: bold;
+  font-weight: 400;
+  font-style: italic;
   text-transform: uppercase;
   letter-spacing: .5px;
   color:#030303;
