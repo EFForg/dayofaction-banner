@@ -25,8 +25,47 @@
 
 }
 */
+
+
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-Light'.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-Light'.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-Italic') format('woff');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+/*
+
+@font-face {
+    font-family: 'Rubik';
     src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'),
          url('fonts/montserrat-bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -35,12 +74,12 @@
 }
 
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
     src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
          url('fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+*/
 }
 html {
     overflow: hidden;
@@ -50,7 +89,8 @@ body {
     overflow: hidden;
     padding: 0;
     background: #08A013;
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -132,7 +172,7 @@ a:hover {
 }
 
 .rightside h2 {
-  font-family: 'Montserrat';
+  font-family: 'Rubik';
   font-size:28px;
   font-weight: bold;
   text-transform: uppercase;
@@ -142,7 +182,7 @@ a:hover {
 }
 
 .rightside h1 {
-  font-family: 'Montserrat';
+  font-family: 'Rubik';
   font-size:36px;
   font-weight: bold;
   text-transform: uppercase;
@@ -153,7 +193,7 @@ a:hover {
 
 
 .rightside p {
-  font-family: 'Montserrat';
+  font-family: 'Rubik';
   font-size:18px;
   letter-spacing: .5px;
   color:#030303;
