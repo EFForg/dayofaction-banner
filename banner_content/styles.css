@@ -219,18 +219,18 @@ a:hover {
 
 .rightside h2 {
   font-family: 'Rubik';
-  font-size:24px;
+  font-size:22px;
   font-weight: 300;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 12.5px;
+  letter-spacing: 11.6px;
   color:#0f7d12;
   margin: 15px 0 0 0;
 }
 
 .rightside h1 {
   font-family: 'Rubik';
-  font-size:30px;
+  font-size:28px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.117em;
@@ -241,7 +241,7 @@ a:hover {
 
 .rightside p {
   font-family: 'Rubik';
-  font-size:16px;
+  font-size:15px;
   font-weight: 300;
   letter-spacing: 0.03em;
   color:#fff;
