@@ -68,8 +68,8 @@
 
 @font-face {
     font-family: 'Rubik';
-    src: url('fonts/Rubik-LightItalic.woff') format('woff');
-    font-weight: 300;
+    src: url('fonts/Rubik-Italic.woff') format('woff');
+    font-weight: 400;
     font-style: italic;
 
 }
@@ -220,7 +220,7 @@ a:hover {
 .rightside h2 {
   font-family: 'Rubik';
   font-size:22px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: 11.6px;
