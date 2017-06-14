@@ -9,13 +9,15 @@
                               
   =============================================================================
 
-  Support the NoGlobalWarrants.org campaign by installing this banner on your site.
+  Support the Net Neutrality Day of Action campaign by installing this banner on your site.
 
-  <sina@eff.org> for support
+  https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality
+
+  github.com/EFForg/net-neutrality-doa for support
 
   =============================================================================
 
-  @source: https://github.com/EFForg/ngw-banner
+  @source: github.com/EFForg/net-neutrality-doa
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
@@ -53,7 +55,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
   widgetConfig.callOnly = widgetConfig.callOnly || false;
   widgetConfig.startAsMinimized = widgetConfig.startAsMinimized || false;
   widgetConfig.disableDate = widgetConfig.disableDate || false;
-  widgetConfig.campaign = widgetConfig.campaign || 'noglobalwarrants';
+  widgetConfig.campaign = widgetConfig.campaign || 'netneutrality_doa';
   widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || null;
 
   function debug() {
@@ -71,7 +73,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
   if (widgetConfig.localAssets) {
     ASSET_URL = '../banner_content/';
   } else {
-    ASSET_URL = 'https://www.eff.org/ngw/banner_content/';
+    ASSET_URL = 'https://www.eff.org/doa/banner_content/';
   }
 
   // Cookie helpers, taken from w3schools
@@ -122,12 +124,12 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
   // Define campaigns
   var campaign = {
-    noglobalwarrants: {
-      cookieName: 'noglobalwarrants_hasseen',
+    netneutrality_doa: {
+      cookieName: 'netneutrality_doa_hasseen',
       runDate: {
-        day: 21,
-        month: 6, // Use natural month, e.g. January = 1
-        year: 2016
+        day: 12,
+        month: 7, // Use natural month, e.g. January = 1
+        year: 2017
       },
       size: {
         desktop: {
