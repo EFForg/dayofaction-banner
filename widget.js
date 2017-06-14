@@ -124,6 +124,50 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
   // Define campaigns
   var campaign = {
+    noglobalwarrants: {
+      cookieName: 'noglobalwarrants_hasseen',
+      runDate: {
+        day: 21,
+        month: 6, // Use natural month, e.g. January = 1
+        year: 2016
+      },
+      size: {
+        desktop: {
+          heightOpened: '300px',
+          heightMinimized: '50px'
+        },
+        mobile: {
+          heightOpened: '100px',
+          heightMinimized: '0px'
+        }
+      },
+      styles: {
+        banner: {
+          campaignSpacer: 'height: 50px;',
+          campaignContainer: 'background: #000; position: fixed; ' +
+            'width: 100%; bottom: 0; left: 0; z-index: 100000; padding: 0; ' +
+            '-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
+          iframeContainer: 'position: relative; height: 350px; width: 100%; ' +
+            'margin: 0; background: #08A013; z-index: 1;',
+          iframe: 'width: 100%; height: 100%; border: 0; margin: 0; ' +
+            'padding: 0; background: #08A013;',
+          footerOverlay: 'cursor: pointer; position: absolute; bottom: 0; ' +
+            'height: 50px; width: 100%; margin: 0; background: none; ' +
+            'z-index: 2;',
+          closeButton: 'border: 0; height: 26px; width: 26px; ' +
+            'cursor: pointer; position: absolute; top: 20px; right: 20px; ' +
+            'background: url("' + ASSET_URL + 'imgs/close-button.png") no-repeat right top;',
+          mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
+            'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
+            'background: url("' + ASSET_URL +
+            'imgs/close-button-mobile.png") no-repeat right top;',
+          openButton: 'border: 0; height: 26px; width: 26px; ' +
+            'cursor: pointer; position: absolute; bottom: 10px; ' +
+            'right: 20px; background: url("' + ASSET_URL +
+            'imgs/open-button.png") no-repeat right top;'
+        }
+      },
+    },
     netneutrality_doa: {
       cookieName: 'netneutrality_doa_hasseen',
       runDate: {
