@@ -13,11 +13,11 @@
 
   https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality
 
-  github.com/EFForg/net-neutrality-doa for support
+  github.com/EFForg/dayofaction-banner for support
 
   =============================================================================
 
-  @source: github.com/EFForg/net-neutrality-doa
+  @source: github.com/EFForg/dayofaction-banner
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.

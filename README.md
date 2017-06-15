@@ -1,16 +1,16 @@
 # Net Neutrality "Day of Action" Banner
 
-_Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](https://github.com/EFForg/net-neutrality-doa/issues) page._
+_Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](https://github.com/EFForg/dayofaction-banner/issues) page._
 
-net-neutrality-doa is a javascript snippet that automatically activates at midnight of July 12 and adds a banner to your site for 24 hours in support of the net neutrality [Day of Action](https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality).
+dayofaction-banner is a javascript snippet that automatically activates at midnight of July 12 and adds a banner to your site for 24 hours in support of the net neutrality [Day of Action](https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality).
 
 **If you own a website, no matter how big or small, you can be part of this.**
 
-<a href="https://efforg.github.io/net-neutrality-doa/example/banner.html" target="_blank"><img src="screenshots/banner-screenshot.png" alt="Banner Screenshot" /></a>
+<a href="https://efforg.github.io/dayofaction-banner/example/banner.html" target="_blank"><img src="screenshots/banner-screenshot.png" alt="Banner Screenshot" /></a>
 
 ## Demo page
 
-<a href="https://efforg.github.io/net-neutrality-doa/example/banner.html">This page</a> shows what the banner will look like on the day of action. 
+<a href="https://efforg.github.io/dayofaction-banner/example/banner.html">This page</a> shows what the banner will look like on the day of action. 
 
 *Note: Please don't copy the code from the source files of the demo pages. Use the code below instead.* 
 
@@ -32,7 +32,7 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 <!--<![endif]-->
 ```
 
-The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](https://github.com/EFForg/net-neutrality-doa/issues) page.
+The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](https://github.com/EFForg/dayofaction-banner/issues) page.
 
 ## Configuration
 

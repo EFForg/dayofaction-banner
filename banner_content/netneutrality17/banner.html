@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <style type="text/css">
+      #frame2 {
+        display: none;
+      }
+
+      body.frame2 #frame1 {
+        display: none;
+      }
+
+      body.frame2 #frame2 {
+        display: block;
+      }
+    </style>
+
+    <script type="text/javascript">
+      (function() { 
+        var listener = function() {
+          document.removeEventListener('mouseover', listener);
+          document.getElementsByTagName('body')[0].classList.add('frame2');
+        };
+
+        document.addEventListener("mouseover", listener);
+        setTimeout(listener, 5000);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="frame1">
+    </div>
+
+    <div id="frame2">
+    </div>
+  </body>
+</html>
