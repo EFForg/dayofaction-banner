@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/netneutrality.css">
 
-    <style type="text/css">
-      #frame2 {
-        display: none;
-      }
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/easyXDM.min.js"></script>
+  <script type='text/javascript' src="js/modernizr.min.js"></script>
+  <script type='text/javascript' src="js/css3-mediaqueries.js"></script>
+  <script type='text/javascript' src="js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="js/main.js"></script>
 
-      body.frame2 #frame1 {
-        display: none;
-      }
+</head>
 
-      body.frame2 #frame2 {
-        display: block;
-      }
-    </style>
+<body>
 
-    <script type="text/javascript">
-      (function() { 
-        var listener = function() {
-          document.removeEventListener('mouseover', listener);
-          document.getElementsByTagName('body')[0].classList.add('frame2');
-        };
+  <!-- Modal -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <div id="frame1">
+            <div class="col-sm-9 rightside top">
+              <div class="rightsidecontainer">
+                <p>This website has been blocked. If you would like to access blocked sites, please upgrade to our Premium Internet Bundle. </p>
+                <div class="button-container">
+                  <p>
+                    <a class="eff-button" href="#">Premium Internet Bundle $199.99</a>
+                  </p>
+                  <p class="button-text">
+                    Includes full access to blocked sites and services
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        document.addEventListener("mouseover", listener);
-        setTimeout(listener, 5000);
-      })();
-    </script>
-  </head>
+          <div id="frame2">
+            <p>Okay, we're kidding. But this is what could happen if the FCC rolls back its net neutrality rules. ISPs would be able to charge you more to access certain types of websites or services you rely on. They could even block some sites altogether, like this one.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
 
-  <body>
-    <div id="frame1">
     </div>
-
-    <div id="frame2">
-    </div>
-  </body>
+  </div>
+</body>
 </html>
