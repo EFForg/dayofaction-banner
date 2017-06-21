@@ -1,19 +1,33 @@
 $(window).on('load',function(){
-  $('#dayofaction').modal('show');
-  function dayHideShow() {
+  function dayShow2() {
     $('#frame1').hide();
     $('#frame2').show("slow");
     $('.real').css("display","block");
     $('.fake').css("display","none");
   }
+  $('#dayofaction').modal({
+   show : true,
+   keyboard : true,
+   backdrop : "static"
+});
+  timer = window.setTimeout(function() {
+    dayShow2();
+  }, 5000);
+
   $('#frame1').on('mouseover', function(event) {
     timer = window.setTimeout(function() {
-      dayHideShow();
-    }, 4000);
+      dayShow2();
+    }, 2000);
   });
 
   $('#frame1').click(function (e) {
     e.defaultPrevented;
-    dayHideShow();
+    dayShow2();
   });
+
+  $('.fake').click(function (e) {
+    e.defaultPrevented;
+    dayShow2();
+  });
+
 });

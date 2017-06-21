@@ -1,148 +1,3 @@
-/* normalise.css v3 */
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-  display: block; }
-
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline; }
-
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-[hidden], template {
-  display: none; }
-
-a {
-  background: transparent; }
-
-a:active, a:hover {
-  outline: 0; }
-
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-b, strong {
-  font-weight: bold; }
-
-dfn {
-  font-style: italic; }
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-mark {
-  background: #ff0;
-  color: #000; }
-
-small {
-  font-size: 80%; }
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-img {
-  border: 0; }
-
-svg:not(:root) {
-  overflow: hidden; }
-
-figure {
-  margin: 1em 40px; }
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
-
-pre {
-  overflow: auto; }
-
-code, kbd, pre, samp {
-  font-family: monospace,monospace;
-  font-size: 1em; }
-
-button, input, optgroup, select, textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0; }
-
-button {
-  overflow: visible; }
-
-button, select {
-  text-transform: none; }
-
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer; }
-
-button[disabled], html input[disabled] {
-  cursor: default; }
-
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-input {
-  line-height: normal; }
-
-input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
-
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
-
-textarea {
-  overflow: auto; }
-
-optgroup {
-  font-weight: bold; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-td, th {
-  padding: 0; }
-
 /* EFF colors */
 /* EFF fonts */
 @font-face {
@@ -151,79 +6,73 @@ td, th {
   font-weight: 300;
   src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/Montserrat-Light.ttf") format("truetype"); }
 body {
+  background: #FFF;
   width: 100%;
-  *zoom: 1;
-  background: #FAFAFA;
   line-height: 1.5em;
   font-family: "Montserrat";
   color: #000000;
   padding-bottom: 0; }
-  body:before, body:after {
-    content: "";
-    display: table; }
-  body:after {
-    clear: both; }
 
-/* Pop-up  */
 /* Modal content */
-/* buttons */
-.fake {
-  display: block; }
-
-.real {
-  display: none; }
-
-#frame1 {
-  visibility: visible;
-  display: block; }
-
-#frame2 {
-  display: none; }
-
-#frame1,
-#frame2 {
-  background: #888888;
-  font-family: "Montserrat";
-  padding: 2rem; }
-  #frame1 p,
-  #frame2 p {
-    color: #000000;
-    font-family: "Montserrat"; }
-  #frame1 p,
-  #frame2 p {
-    color: #000000;
-    font-family: "Montserrat"; }
-  #frame1 .button-container,
-  #frame2 .button-container {
-    text-align: center;
-    margin: 0 auto; }
-    #frame1 .button-container .eff-button,
-    #frame2 .button-container .eff-button {
-      background: #CC0000;
-      border: none;
-      border-bottom: 0.3rem solid #9b0505;
-      color: #fff;
-      font-family: "Montserrat";
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 0.3rem 2rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer; }
-      #frame1 .button-container .eff-button:link, #frame1 .button-container .eff-button:visited,
-      #frame2 .button-container .eff-button:link,
-      #frame2 .button-container .eff-button:visited {
-        color: #ffffff; }
-      #frame1 .button-container .eff-button:hover,
-      #frame2 .button-container .eff-button:hover {
-        background: rgba(204, 0, 0, 0.8) !important; }
-    #frame1 .button-container .button-text,
-    #frame2 .button-container .button-text {
-      font-family: "Montserrat";
-      font-size: 1rem;
-      color: #254B66;
-      margin: 0;
+.modal-content {
+  /* buttons */ }
+  .modal-content .modal-header {
+    border: none;
+    padding: 0; }
+  .modal-content .close {
+    margin: 1rem 1.5rem 0 0; }
+  .modal-content .fake {
+    display: block; }
+  .modal-content .real {
+    display: none; }
+  .modal-content #frame1 {
+    visibility: visible;
+    display: block; }
+  .modal-content #frame2 {
+    display: none; }
+  .modal-content #frame1,
+  .modal-content #frame2 {
+    font-family: "Montserrat";
+    padding: 2rem; }
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      color: #000000;
+      font-family: "Montserrat"; }
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      color: #000000;
+      font-family: "Montserrat"; }
+    .modal-content #frame1 .button-container,
+    .modal-content #frame2 .button-container {
       text-align: center;
-      text-transform: uppercase; }
+      margin: 0 auto; }
+      .modal-content #frame1 .button-container .eff-button,
+      .modal-content #frame2 .button-container .eff-button {
+        background: #CC0000;
+        border: none;
+        border-bottom: 0.3rem solid #9b0505;
+        color: #fff;
+        font-family: "Montserrat";
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 0.3rem 2rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer; }
+        .modal-content #frame1 .button-container .eff-button:link, .modal-content #frame1 .button-container .eff-button:visited,
+        .modal-content #frame2 .button-container .eff-button:link,
+        .modal-content #frame2 .button-container .eff-button:visited {
+          color: #ffffff; }
+        .modal-content #frame1 .button-container .eff-button:hover,
+        .modal-content #frame2 .button-container .eff-button:hover {
+          background: rgba(204, 0, 0, 0.8) !important; }
+      .modal-content #frame1 .button-container .button-text,
+      .modal-content #frame2 .button-container .button-text {
+        font-family: "Montserrat";
+        font-size: 1rem;
+        color: #254B66;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase; }
 
 /*# sourceMappingURL=netneutrality.css.map */
