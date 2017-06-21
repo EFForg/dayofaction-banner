@@ -5,19 +5,27 @@ $(window).on('load',function(){
     $('.real').css("display","block");
     $('.fake').css("display","none");
   }
+
+  function closeModal(){
+    $('#dayofaction').modal('hide');
+  }
   $('#dayofaction').modal({
-   show : true,
-   keyboard : true,
-   backdrop : "static"
-});
+    show : true,
+    keyboard : true,
+    backdrop : "static"
+  });
   timer = window.setTimeout(function() {
     dayShow2();
-  }, 5000);
+  }, 8000);
+
+  timer = window.setTimeout(function() {
+    closeModal();
+  }, 20000);
 
   $('#frame1').on('mouseover', function(event) {
     timer = window.setTimeout(function() {
       dayShow2();
-    }, 2000);
+    }, 3000);
   });
 
   $('#frame1').click(function (e) {
