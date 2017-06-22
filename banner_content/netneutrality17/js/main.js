@@ -14,18 +14,18 @@ $(window).on('load',function(){
     keyboard : true,
     backdrop : "static"
   });
-  timer = window.setTimeout(function() {
+  timer = window.setTimeout(function(e) {
     dayShow2();
   }, 8000);
 
-  timer = window.setTimeout(function() {
+  timer = window.setTimeout(function(e) {
     closeModal();
   }, 20000);
 
   $('#frame1').on('mouseover', function(event) {
     timer = window.setTimeout(function() {
       dayShow2();
-    }, 3000);
+    }, 2000);
   });
 
   $('#frame1').click(function (e) {

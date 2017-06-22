@@ -3,7 +3,6 @@
 $dark-blue: #254B66;
 $eff-red: #CC0000;
 $dark-red: #9b0505;
-//$gray: #888888;
 $black: #000000;
 
 /* EFF fonts */
@@ -14,12 +13,22 @@ $black: #000000;
   src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/Montserrat-Light.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+
 $default-font-size: 16px;
 $sans-serif: "Montserrat";
 
 body {
   font-family: $sans-serif;
   color: $black;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 /* Modal content */
@@ -43,6 +52,19 @@ body {
     line-height: 2.5rem;
     visibility: visible;
     display:block;
+    span img { // "blocked" image
+      margin: -4.5rem 0 4rem -1rem;
+      height: auto;
+      width:100%  ;
+    }
+    p.atnt { // corporate logo
+      padding: 0 2rem 2rem 0;
+      float: left;
+      img {
+        height: auto;
+        width:200px;
+      }
+    }
   }
 
   #frame2 {
@@ -64,7 +86,6 @@ body {
       color:$black;
       font-family: $sans-serif;
     }
-    p.atnt,
     p.eff-logo {
       padding-bottom:2rem;
       text-align: center;
@@ -78,7 +99,7 @@ body {
     }
     .button-container{
       text-align: center;
-      margin: 3rem auto 0;
+      margin: 3rem auto 2rem;
       .eff-button {
         background: $eff-red;
         border: none;
@@ -94,16 +115,12 @@ body {
         &:link, &:visited {
           color: #ffffff;
         }
-        @media screen and (max-width: 400px) {
-          .eff-button{
-            font-size:1.3rem;
-          }
-        }
 
         &:hover {
           background: rgba($eff-red, 0.8) !important;
         }
       }
+
       .button-text {
         font-family: $sans-serif;
         font-size: 1.5rem;
@@ -114,5 +131,10 @@ body {
         text-transform: uppercase;
       }
     }
+  }
+}
+@media screen and (max-width: 400px) {
+  .eff-button{
+    font-size:1rem !important;
   }
 }
