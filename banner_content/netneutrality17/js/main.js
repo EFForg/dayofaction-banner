@@ -1,7 +1,7 @@
 $(window).on('load',function(){
   function dayShow2() {
     $('#frame1').hide();
-    $('#frame2').show("slow");
+    $('#frame2').show("fast");
     $('.real').css("display","block");
     $('.fake').css("display","none");
   }
@@ -9,14 +9,28 @@ $(window).on('load',function(){
   function closeModal(){
     $('#dayofaction').modal('hide');
   }
+
   $('#dayofaction').modal({
     show : true,
     keyboard : true,
     backdrop : "static"
   });
-  timer = window.setTimeout(function(e) {
+
+if ($('#frame1:visible')) {
+  //alert('see it');
+  $('body').on('click',function(event) {
+    $('#dayofaction').modal('show');
     dayShow2();
-  }, 8000);
+  });
+}
+
+if ($('#frame1:hidden')) {
+  alert('dont see it');
+  $('body').on('click',function(event) {
+    $('#dayofaction').modal('hide');
+  });
+}
+
 
   timer = window.setTimeout(function(e) {
     closeModal();
