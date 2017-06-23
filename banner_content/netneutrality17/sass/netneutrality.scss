@@ -1,0 +1,165 @@
+
+/* EFF colors */
+$dark-blue: #254B66;
+$eff-red: #CC0000;
+$dark-red: #9b0505;
+$black: #000000;
+
+/* EFF fonts */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+
+  $default-font-size: 16px;
+  $sans-serif: "Montserrat";
+
+  body {
+    font-family: $sans-serif;
+    color: $black;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .fade { // speed up of fade  when closing modal
+    opacity: 0;
+    -webkit-transition: opacity 0s linear;
+    -moz-transition: opacity 0s linear;
+    -ms-transition: opacity 0s linear;
+    -o-transition: opacity 0s linear;
+    transition: opacity 0s linear;
+  }
+
+  /* Modal content */
+  .modal-content {
+    .modal-header {
+      border: none;
+      padding: 0;
+    }
+    /* buttons */
+    .close {
+      margin: 1rem 1.5rem 0 0;
+    }
+    .real {
+      display: none;
+    }
+
+    #frame1,
+    #frame2 {
+      font-family: $sans-serif;
+      padding: 2rem;
+      p {
+        font-size: 2rem;
+        color:$black;
+        font-family: $sans-serif;
+      }
+      p.eff-logo {
+        padding-bottom:2rem;
+        text-align: center;
+        img {
+          height: auto;
+          width:250px;
+        }
+      }
+      p.eff-logo img{
+        width:150px
+      }
+      .button-container{
+        text-align: center;
+        margin: 3rem auto 2rem;
+        .eff-button {
+          background: $eff-red;
+          border: none;
+          border-bottom: 0.3rem solid $dark-red;
+          color: #fff;
+          font-size: 2.5rem;
+          font-weight: 700;
+          padding: 0.3rem 2rem;
+          text-transform: uppercase;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:link, &:visited {
+            color: #ffffff;
+          }
+
+          &:hover {
+            background: rgba($eff-red, 0.8) !important;
+          }
+        }
+
+        .button-text {
+          font-family: $sans-serif;
+          font-size: 2rem;
+          color: $dark-blue;
+          font-weight: 700;
+          margin: 0;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+    #frame1 {
+      line-height: 2.5rem;
+      visibility: visible;
+      display:block;
+      span img { // "blocked" image
+        margin: -4rem 0 0 -13rem;
+        height: auto;
+        width:150%;
+      }
+      p.atnt { // fake corporate logo
+        padding: 0 2rem 2rem 0;
+        float: left;
+        img {
+          height: auto;
+          width:200px;
+        }
+      }
+      .button-container .button-text {
+        font-size: 1.5rem;
+      }
+    }
+
+    #frame2 {
+      display:none;
+      p {
+        span {
+          font-size: 3rem;
+          font-weight: 900;
+        }
+      }
+    }
+    @media screen and (max-width: 401px) {
+      #frame1 p,
+      #frame2 p {
+        clear:both;
+        font-size:1.75rem;
+      }
+      #frame1 span img { // "blocked" image
+        margin: -3.0rem 0 4rem -1rem;
+        max-width:300px;
+      }
+      #frame1 .button-container .eff-button {
+        font-size:1.2rem;
+      }
+      #frame2  {
+        .button-container .button-text {
+          font-size:1.5rem;
+        }
+        p span {
+          font-size:2.5rem;
+        }
+      }
+    }
+  }

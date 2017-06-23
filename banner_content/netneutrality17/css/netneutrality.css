@@ -1,0 +1,139 @@
+/* EFF colors */
+/* EFF fonts */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/Montserrat-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+body {
+  font-family: "Montserrat";
+  color: #000000; }
+
+a:hover {
+  text-decoration: none; }
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0s linear;
+  -moz-transition: opacity 0s linear;
+  -ms-transition: opacity 0s linear;
+  -o-transition: opacity 0s linear;
+  transition: opacity 0s linear; }
+
+/* Modal content */
+.modal-content {
+  /* buttons */ }
+  .modal-content .modal-header {
+    border: none;
+    padding: 0; }
+  .modal-content .close {
+    margin: 1rem 1.5rem 0 0; }
+  .modal-content .real {
+    display: none; }
+  .modal-content #frame1,
+  .modal-content #frame2 {
+    font-family: "Montserrat";
+    padding: 2rem; }
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      font-size: 2rem;
+      color: #000000;
+      font-family: "Montserrat"; }
+    .modal-content #frame1 p.eff-logo,
+    .modal-content #frame2 p.eff-logo {
+      padding-bottom: 2rem;
+      text-align: center; }
+      .modal-content #frame1 p.eff-logo img,
+      .modal-content #frame2 p.eff-logo img {
+        height: auto;
+        width: 250px; }
+    .modal-content #frame1 p.eff-logo img,
+    .modal-content #frame2 p.eff-logo img {
+      width: 150px; }
+    .modal-content #frame1 .button-container,
+    .modal-content #frame2 .button-container {
+      text-align: center;
+      margin: 3rem auto 2rem; }
+      .modal-content #frame1 .button-container .eff-button,
+      .modal-content #frame2 .button-container .eff-button {
+        background: #CC0000;
+        border: none;
+        border-bottom: 0.3rem solid #9b0505;
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding: 0.3rem 2rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer; }
+        .modal-content #frame1 .button-container .eff-button:link, .modal-content #frame1 .button-container .eff-button:visited,
+        .modal-content #frame2 .button-container .eff-button:link,
+        .modal-content #frame2 .button-container .eff-button:visited {
+          color: #ffffff; }
+        .modal-content #frame1 .button-container .eff-button:hover,
+        .modal-content #frame2 .button-container .eff-button:hover {
+          background: rgba(204, 0, 0, 0.8) !important; }
+      .modal-content #frame1 .button-container .button-text,
+      .modal-content #frame2 .button-container .button-text {
+        font-family: "Montserrat";
+        font-size: 2rem;
+        color: #254B66;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase; }
+  .modal-content #frame1 {
+    line-height: 2.5rem;
+    visibility: visible;
+    display: block; }
+    .modal-content #frame1 span img {
+      margin: -4rem 0 0 -13rem;
+      height: auto;
+      width: 150%; }
+    .modal-content #frame1 p.atnt {
+      padding: 0 2rem 2rem 0;
+      float: left; }
+      .modal-content #frame1 p.atnt img {
+        height: auto;
+        width: 200px; }
+    .modal-content #frame1 .button-container .button-text {
+      font-size: 1.5rem; }
+  .modal-content #frame2 {
+    display: none; }
+    .modal-content #frame2 p span {
+      font-size: 3rem;
+      font-weight: 900; }
+  @media screen and (max-width: 401px) {
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      clear: both;
+      font-size: 1.75rem; }
+    .modal-content #frame1 span img {
+      margin: -3.0rem 0 4rem -1rem;
+      max-width: 300px; }
+    .modal-content #frame1 .button-container .eff-button {
+      font-size: 1.2rem; }
+    .modal-content #frame2 .button-container .button-text {
+      font-size: 1.5rem; }
+    .modal-content #frame2 p span {
+      font-size: 2.5rem; } }
+
+
+.modal-open .modal {
+  overflow-y: hidden !important;
+}
+
+.modal-backdrop {
+  display: none !important;
+}
+
+body {
+  background: transparent !important;
+}
+
+/*# sourceMappingURL=netneutrality.css.map */

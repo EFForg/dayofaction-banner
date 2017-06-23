@@ -9,13 +9,15 @@
                               
   =============================================================================
 
-  Support the NoGlobalWarrants.org campaign by installing this banner on your site.
+  Support the Net Neutrality Day of Action campaign by installing this banner on your site.
 
-  <sina@eff.org> for support
+  https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality
+
+  github.com/EFForg/dayofaction-banner for support
 
   =============================================================================
 
-  @source: https://github.com/EFForg/ngw-banner
+  @source: github.com/EFForg/dayofaction-banner
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
@@ -53,26 +55,16 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
   widgetConfig.callOnly = widgetConfig.callOnly || false;
   widgetConfig.startAsMinimized = widgetConfig.startAsMinimized || false;
   widgetConfig.disableDate = widgetConfig.disableDate || false;
-  widgetConfig.campaign = widgetConfig.campaign || 'noglobalwarrants';
+  widgetConfig.campaign = widgetConfig.campaign || 'netneutrality17';
   widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || null;
 
-  function debug() {
-    if (widgetConfig.debug) {
-      if (this.console) {
-        console.log.apply(console, arguments);
-      }
-    }
-  }
-
   // Setup
-  var activeCampaign;
-  var ASSET_URL;
-
-  if (widgetConfig.localAssets) {
-    ASSET_URL = '../banner_content/';
-  } else {
-    ASSET_URL = 'https://www.eff.org/ngw/banner_content/';
-  }
+  var asset_url;
+  if (widgetConfig.localAssets)
+    asset_url = '../banner_content/';
+  else
+    asset_url = 'https://www.eff.org/doa/banner_content/';
+  asset_url += widgetConfig.campaign + '/';
 
   // Cookie helpers, taken from w3schools
   function setCookie(c_name, value, seconds) {
@@ -104,25 +96,19 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
   // Define checks
   var checks = {
-    correctDate: function (callback) {
-      debug('correctDate()');
-
-      // This used to check the date by getting it from a server, but now just uses the device's local date.
-
-      window.dateCallBackFailSafe = setTimeout(function () {
-        var today = new Date();
-        if (today.getDate() === activeCampaign.runDate.day && today.getMonth() === activeCampaign.runDate.month - 1 && today.getFullYear() === activeCampaign.runDate.year) {
-          callback({activeToday: true});
-        } else {
-          callback({activeToday: false});
-        }
-      }, 1);
+    correctDate: function (campaign, callback) {
+      var today = new Date();
+      var activeToday = today.getDate() === campaign.runDate.day &&
+                        today.getMonth() === campaign.runDate.month - 1 &&
+                        today.getFullYear() === campaign.runDate.year;
+      callback({ activeToday: activeToday || widgetConfig.disableDate || widgetConfig.debug });
     }
   };
 
   // Define campaigns
   var campaign = {
     noglobalwarrants: {
+      type: 'banner',
       cookieName: 'noglobalwarrants_hasseen',
       runDate: {
         day: 21,
@@ -131,12 +117,12 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
       },
       size: {
         desktop: {
-          heightOpened: '300px',
-          heightMinimized: '50px'
+          height: '300px',
+          width: '350px'
         },
         mobile: {
-          heightOpened: '100px',
-          heightMinimized: '0px'
+          height: '300px',
+          width: '350px'
         }
       },
       styles: {
@@ -154,51 +140,90 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
             'z-index: 2;',
           closeButton: 'border: 0; height: 26px; width: 26px; ' +
             'cursor: pointer; position: absolute; top: 20px; right: 20px; ' +
-            'background: url("' + ASSET_URL + 'imgs/close-button.png") no-repeat right top;',
+            'background: url("' + asset_url + 'imgs/close-button.png") no-repeat right top;',
           mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
             'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
-            'background: url("' + ASSET_URL +
+            'background: url("' + asset_url +
             'imgs/close-button-mobile.png") no-repeat right top;',
           openButton: 'border: 0; height: 26px; width: 26px; ' +
             'cursor: pointer; position: absolute; bottom: 10px; ' +
-            'right: 20px; background: url("' + ASSET_URL +
+            'right: 20px; background: url("' + asset_url +
             'imgs/open-button.png") no-repeat right top;'
         }
       },
+      fullSize: true,
       minimized: false,
-      show: function (options) {
-        debug('show()', options);
-
-        var cookie = getCookie(activeCampaign.cookieName);
-
-        if (widgetConfig.startAsMinimized && cookie === null) {
-          this.minimized = true;
+      show: function (options) { }
+    },
+    netneutrality17: {
+      type: 'popup',
+      cookieName: 'netneutrality17_hasseen',
+      runDate: {
+        day: 12,
+        month: 7, // Use natural month, e.g. January = 1
+        year: 2017
+      },
+      size: {
+        desktop: {
+          height: '680px',
+          width: '830px'
+        },
+        mobile: {
+          height: '400px',
+          width: '350px'
         }
-
-        var style = activeCampaign.styles[activeCampaign.config.show_style];
-
-        if (style.overlay) {
-          var overlay = document.createElement('div');
-          overlay.style.cssText = style.overlay;
-          document.body.appendChild(overlay);
+      },
+      styles: {
+        banner: {
+          iframeContainer: 'position: fixed; top: 50%; left: 50%; margin-left: -415px; margin-top: -340px',
+          iframe: 'width: 100%; height: 100%; border: 0; margin: 0;  padding: 0; background: transparent',
+          closeButton: 'border: 0; height: 40px; width: 40px; ' +
+            'cursor: pointer; position: absolute; top: 45px; right: 132px; opacity: 0.6;' +
+            'background: url("' + asset_url + 'imgs/close-button.png") no-repeat right top; background-size: 100%;',
+          mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
+            'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
+            'background: url("' + asset_url + 'imgs/close-button-mobile.png") no-repeat right top; background-size: 100%;',
         }
+      },
+      fullSize: true,
+      minimized: false,
+      show: function (options) { }
+    }
+  };
+
+  function initCampaign(campaign, config) {
+    var cookie = getCookie(campaign.cookieName);
+
+    if (cookie)
+      campaign.minimized = JSON.parse(cookie).minimized;
+    else if (config.startAsMinimized)
+      campaign.minimized = true;
+
+    if (campaign.minimized && campaign.type == 'popup')
+      return;
+
+    checks.correctDate(campaign, function(response) {
+      if (response.activeToday) {
+        var style = campaign.styles[widgetConfig.show_style];
 
         // Create a spacer to prevent the container from covering up
         // parts of the containing page when minimized
 
-        if(document.getElementById("campaign-spacer")){
+        if (document.getElementById("campaign-spacer"))
           document.body.removeChild(document.getElementById("campaign-spacer"));
-        }
 
-        if(document.getElementById("campaign-container")){
+        if (document.getElementById("campaign-container"))
           document.body.removeChild(document.getElementById("campaign-container"));
-        }
+
+        if (document.getElementById("campaign-container-overlay"))
+          document.body.removeChild(document.getElementById("campaign-container-overlay"));
 
         var campaignSpacer = document.createElement('div');
         window.campaignSpacer = campaignSpacer;
         campaignSpacer.style.cssText = style.campaignSpacer;
         campaignSpacer.setAttribute("id", "campaign-spacer");
         campaignSpacer.setAttribute("class", "campaign-spacer");
+
         // Create a container
         var campaignContainer = document.createElement('div');
         window.campaignContainer = campaignContainer;
@@ -209,172 +234,172 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
         // Create a container for the iframe so we can do padding and
         // border-radius properly
         var iframeContainer = document.createElement('div');
-
         iframeContainer.style.cssText = style.iframeContainer;
+
+        var firstTime = !!cookie && campaign.fullSize;
+        var iframe = document.createElement('iframe');
+        iframe.style.cssText = style.iframe;
+        iframe.src = asset_url + widgetConfig.show_style + '.html?firstTime=' + firstTime;
 
         var e = document.documentElement,
             g = document.getElementsByTagName('body')[0],
             x = window.innerWidth || e.clientWidth || g.clientWidth;
 
-        if (x < 767) {
-          if (!this.minimized) {
-            iframeContainer.style.height = '100px';
-          } else {
-            iframeContainer.style.height = '0px';
-          }
-        } else {
-          // Find out if user has minimized via cookie
-          if (this.minimized) {
-            iframeContainer.style.height = '50px';
-          } else {
-            iframeContainer.style.height = activeCampaign.size.desktop.heightOpened;
-          }
-          var footerOverlay = document.createElement('div');
-          footerOverlay.style.cssText = style.footerOverlay;
-          campaignContainer.appendChild(footerOverlay);
-        }
+        campaign.fullSize = x >= 767;
 
-        // Append Iframe and campaign container to document
-        campaignContainer.appendChild(iframeContainer);
-
-        document.body.appendChild(campaignSpacer);
-        document.body.appendChild(campaignContainer);
-
-        var firstTime = true;
-
-        if (cookie !== null) {
-          firstTime = false;
-        }
-
-        // a Hack, if mobile set firsttime to false so splash page never shows
-        if (x < 767) {
-          firstTime = false;
-        }
-
-        var iframe = document.createElement('iframe');
-
-        iframe.style.cssText = style.iframe;
-
-        var us = iframe.src = ASSET_URL + activeCampaign.config.show_style +
-          '.html?firstTime=' + firstTime;
-
-        iframeContainer.appendChild(iframe);
-
-        var that = this;
-
-        if (x > 767) {
-          that.fullSize = true;
-          // Setup a close button
-          var closeButton = document.createElement('button');
-          closeButton.style.cssText = style.closeButton;
-          iframeContainer.appendChild(closeButton);
-
-          // Setup a open button
-          var openButton = document.createElement('button');
-          openButton.style.cssText = style.openButton;
-          iframeContainer.appendChild(openButton);
-
-          if (this.minimized) {
-            openButton.style.display = 'block';
-            closeButton.style.display = 'none';
-            footerOverlay.style.display = 'block';
-          } else {
-            openButton.style.display = 'none';
-            closeButton.style.display = 'block';
-            footerOverlay.style.display = 'none';
-          }
-
-          var toggleDisplay = function () {
-            if (!that.minimized) {
+        if (campaign.type == 'banner') {
+          if (campaign.fullSize) {
+            // Find out if user has minimized via cookie
+            if (campaign.minimized) {
               iframeContainer.style.height = '50px';
-              that.minimized = true;
-              footerOverlay.style.display = 'block';
-              closeButton.style.display = 'none';
-              openButton.style.display = 'block';
-              setCookie(activeCampaign.cookieName, '{"minimized": true}',
-                widgetConfig.cookieTimeout);
             } else {
-              iframeContainer.style.height = '300px';
-              that.minimized = false;
-              footerOverlay.style.display = 'none';
+              iframeContainer.style.height = campaign.size.desktop.heightOpened;
+            }
+
+            var footerOverlay = document.createElement('div');
+            footerOverlay.style.cssText = style.footerOverlay;
+            campaignContainer.appendChild(footerOverlay);
+          } else {
+            if (!campaign.minimized) {
+              iframeContainer.style.height = '100px';
+            } else {
+              iframeContainer.style.height = '0px';
+            }
+          }
+
+          if (campaign.fullSize) {
+            // Setup a close button
+            var closeButton = document.createElement('button');
+            closeButton.style.cssText = style.closeButton;
+            iframeContainer.appendChild(closeButton);
+
+            // Setup a open button
+            var openButton = document.createElement('button');
+            openButton.style.cssText = style.openButton;
+            iframeContainer.appendChild(openButton);
+
+            if (campaign.minimized) {
+              openButton.style.display = 'block';
+              closeButton.style.display = 'none';
+              footerOverlay.style.display = 'block';
+            } else {
               openButton.style.display = 'none';
               closeButton.style.display = 'block';
-              setCookie(activeCampaign.cookieName, '{"minimized": false}',
-                widgetConfig.cookieTimeout);
+              footerOverlay.style.display = 'none';
             }
-          };
 
-          footerOverlay.onclick = toggleDisplay;
-          closeButton.onclick = toggleDisplay;
-        } else {
-          that.fullSize = false;
-          var mobileCloseButton = document.createElement('button');
-          mobileCloseButton.style.cssText = style.mobileCloseButton;
-          iframeContainer.appendChild(mobileCloseButton);
-          debug(that.minimized);
-          if (that.minimized) {
+            var toggleDisplay = function () {
+              if (!campaign.minimized) {
+                iframeContainer.style.height = '50px';
+                campaign.minimized = true;
+                footerOverlay.style.display = 'block';
+                closeButton.style.display = 'none';
+                openButton.style.display = 'block';
+                setCookie(campaign.cookieName, '{"minimized": true}', widgetConfig.cookieTimeout);
+              } else {
+                iframeContainer.style.height = '300px';
+                campaign.minimized = false;
+                footerOverlay.style.display = 'none';
+                openButton.style.display = 'none';
+                closeButton.style.display = 'block';
+                setCookie(campaign.cookieName, '{"minimized": false}', widgetConfig.cookieTimeout);
+              }
+            };
 
-            mobileCloseButton.style.display = 'none';
+            footerOverlay.onclick = toggleDisplay;
+            closeButton.onclick = toggleDisplay;
           } else {
-            mobileCloseButton.style.display = 'block';
+            var mobileCloseButton = document.createElement('button');
+            mobileCloseButton.style.cssText = style.mobileCloseButton;
+            iframeContainer.appendChild(mobileCloseButton);
+
+            if (campaign.minimized) {
+              mobileCloseButton.style.display = 'none';
+            } else {
+              mobileCloseButton.style.display = 'block';
+            }
+            mobileCloseButton.onclick = function () {
+              setCookie(campaign.cookieName, '{"minimized": true}',
+                        widgetConfig.cookieTimeout);
+              document.body.removeChild(campaignContainer);
+            };
           }
-          mobileCloseButton.onclick = function () {
-            setCookie(activeCampaign.cookieName, '{"minimized": true}',
-              widgetConfig.cookieTimeout);
-            document.body.removeChild(campaignContainer);
+
+          // Append Iframe and campaign container to document
+          campaignContainer.appendChild(iframeContainer);
+          iframeContainer.appendChild(iframe);
+          document.body.appendChild(campaignSpacer);
+          document.body.appendChild(campaignContainer);
+        } else if (campaign.type == 'popup') {
+          // Setup a close button
+          var closeButton = document.createElement('button');
+          closeButton.style.cssText = campaign.fullSize ? style.closeButton : style.mobileCloseButton;
+          iframeContainer.appendChild(closeButton);
+
+          var overlayContainer = document.createElement('div');
+          overlayContainer.id = 'campaign-container-overlay';
+          overlayContainer.style = 'position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.5); '+
+                                   'width: 100%; height: 100%; ';
+
+          var closeModal = function() {
+            overlayContainer.style.display = 'none';
+            document.getElementsByTagName('body')[0].style.overflow = null;
+            setCookie(campaign.cookieName, '{"minimized": true}', widgetConfig.cookieTimeout);
           };
+
+
+          closeButton.onclick = closeModal;
+          overlayContainer.onclick = closeModal;
+
+          var iframeSize = campaign.fullSize ? campaign.size.desktop : campaign.size.mobile;
+          iframeContainer.style.position = 'absolute';
+          iframeContainer.style.top = '50%';
+          iframeContainer.style.left = '50%';
+          iframeContainer.style.marginTop = 'calc(-'+iframeSize.height+'/2)';
+          iframeContainer.style.marginLeft = 'calc(-'+iframeSize.width+'/2)';
+          iframeContainer.style.height = iframeSize.height;
+          iframeContainer.style.width = iframeSize.width;
+
+          // Append Iframe and campaign container to document
+          campaignContainer.appendChild(iframeContainer);
+          iframeContainer.appendChild(iframe);
+          overlayContainer.appendChild(campaignSpacer);
+          overlayContainer.appendChild(campaignContainer);
+          document.body.appendChild(overlayContainer);
+
+          document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         }
-      },
-      init: function (config) {
-        activeCampaign.config = config;
 
-        var cookie = getCookie(activeCampaign.cookieName);
-        var that = this;
-
-        if (cookie) {
-          this.minimized = JSON.parse(cookie).minimized;
-        }
-
-        checks.correctDate(function (response) {
-          debug('correctDate() callback', response);
-
-          clearTimeout(window.dateCallBackFailSafe);
-
-          if (response && (response.activeToday ||
-              widgetConfig.disableDate || widgetConfig.debug)) {
-
-              activeCampaign.show({
-                location: null,
-                widgetConfig: widgetConfig
-              });
-
-            if (window.addEventListener) window.addEventListener('resize', function() {
-                var w = window,
-                  d = document,
-                  e = d.documentElement,
-                  g = d.getElementsByTagName('body')[0],
-                  x = w.innerWidth || e.clientWidth || g.clientWidth,
-                  y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-               if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
-                  if(window.tdwfbResizeCallback) {
-                    clearTimeout(window.tdwfbResizeCallback);
-                  }
-                  window.tdwfbResizeCallback = setTimeout(function () {
-                      that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});
-                      windowWidth = x;
-                  }, 50);
-                }
-            }, false);
-          }
-        });
+        campaign.config = config;
+        campaign.show(config);
       }
-    }
-  };
+    });
+  }
 
   // Load campaign if it exists
   if (typeof campaign[widgetConfig.campaign] !== 'undefined') {
-    activeCampaign = campaign[widgetConfig.campaign];
-    activeCampaign.init(widgetConfig);
+    var activeCampaign = campaign[widgetConfig.campaign];
+    initCampaign(activeCampaign, widgetConfig);
+
+    if (window.addEventListener)
+      window.addEventListener('resize', function() {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+        if ((activeCampaign.fullSize && x < 767) || (!activeCampaign.fullSize && x > 767)) {
+          if (window.bannerResizeCallback)
+            clearTimeout(window.bannerResizeCallback);
+
+          window.bannerResizeCallback = setTimeout(function () {
+            initCampaign(activeCampaign, widgetConfig);
+          }, 50);
+        }
+      }, false);
+
   } else {
     return false;
   }

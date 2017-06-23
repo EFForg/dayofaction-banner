@@ -9,13 +9,15 @@
                               
   =============================================================================
 
-  Support the NoGlobalWarrants.org campaign by installing this banner on your site.
+  Support the Net Neutrality Day of Action campaign by installing this banner on your site.
 
-  <sina@eff.org> for support
+  https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality
+
+  github.com/EFForg/dayofaction-banner for support
 
   =============================================================================
 
-  @source: https://github.com/EFForg/ngw-banner
+  @source: github.com/EFForg/dayofaction-banner
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
