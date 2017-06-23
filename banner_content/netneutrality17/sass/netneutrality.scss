@@ -41,48 +41,17 @@ a:hover {
   .close {
     margin: 1rem 1.5rem 0 0;
   }
-  .fake {
-    display: block;
-  }
   .real {
     display: none;
   }
-  #frame1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    visibility: visible;
-    display:block;
-    span img { // "blocked" image
-      margin: -4.5rem 0 4rem -1rem;
-      height: auto;
-      width:100%  ;
-    }
-    p.atnt { // corporate logo
-      padding: 0 2rem 2rem 0;
-      float: left;
-      img {
-        height: auto;
-        width:200px;
-      }
-    }
-  }
 
-  #frame2 {
-    display:none;
-    p {
-      font-size: 1.5rem;
-      span {
-        font-size: 3rem;
-        font-weight: 900;
-      }
-    }
-  }
 
   #frame1,
   #frame2 {
     font-family: $sans-serif;
     padding: 2rem;
     p {
+      font-size: 2rem;
       color:$black;
       font-family: $sans-serif;
     }
@@ -105,7 +74,7 @@ a:hover {
         border: none;
         border-bottom: 0.3rem solid $dark-red;
         color: #fff;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
         padding: 0.3rem 2rem;
         text-transform: uppercase;
@@ -123,7 +92,7 @@ a:hover {
 
       .button-text {
         font-family: $sans-serif;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: $dark-blue;
         font-weight: 700;
         margin: 0;
@@ -132,9 +101,49 @@ a:hover {
       }
     }
   }
-}
-@media screen and (max-width: 400px) {
-  .eff-button{
-    font-size:1rem !important;
+  #frame1 {
+    line-height: 2.5rem;
+    visibility: visible;
+    display:block;
+    span img { // "blocked" image
+      margin: -10rem 0 4rem -13rem;
+      height: auto;
+      width:150%;
+    }
+    p.atnt { // fake corporate logo
+      padding: 0 2rem 2rem 0;
+      float: left;
+      img {
+        height: auto;
+        width:200px;
+      }
+    }
+    .button-container .button-text {
+      font-size: 1.5rem;
+    }
+  }
+
+  #frame2 {
+    display:none;
+    p {
+      span {
+        font-size: 3rem;
+        font-weight: 900;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    #frame1 p,
+    #frame2 p {
+      clear:both;
+      font-size:1.75rem;
+    }
+    #frame1 span img { // "blocked" image
+        margin: -4.5rem 0 4rem -1rem;
+        max-width:300px;
+      }
+    #frame1 .button-container .eff-button{
+      font-size:1.2rem;
+    }
   }
 }

@@ -25,38 +25,15 @@ a:hover {
     padding: 0; }
   .modal-content .close {
     margin: 1rem 1.5rem 0 0; }
-  .modal-content .fake {
-    display: block; }
   .modal-content .real {
     display: none; }
-  .modal-content #frame1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    visibility: visible;
-    display: block; }
-    .modal-content #frame1 span img {
-      margin: -4.5rem 0 4rem -1rem;
-      height: auto;
-      width: 100%; }
-    .modal-content #frame1 p.atnt {
-      padding: 0 2rem 2rem 0;
-      float: left; }
-      .modal-content #frame1 p.atnt img {
-        height: auto;
-        width: 200px; }
-  .modal-content #frame2 {
-    display: none; }
-    .modal-content #frame2 p {
-      font-size: 1.5rem; }
-      .modal-content #frame2 p span {
-        font-size: 3rem;
-        font-weight: 900; }
   .modal-content #frame1,
   .modal-content #frame2 {
     font-family: "Montserrat";
     padding: 2rem; }
     .modal-content #frame1 p,
     .modal-content #frame2 p {
+      font-size: 2rem;
       color: #000000;
       font-family: "Montserrat"; }
     .modal-content #frame1 p.eff-logo,
@@ -80,7 +57,7 @@ a:hover {
         border: none;
         border-bottom: 0.3rem solid #9b0505;
         color: #fff;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
         padding: 0.3rem 2rem;
         text-transform: uppercase;
@@ -96,15 +73,42 @@ a:hover {
       .modal-content #frame1 .button-container .button-text,
       .modal-content #frame2 .button-container .button-text {
         font-family: "Montserrat";
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: #254B66;
         font-weight: 700;
         margin: 0;
         text-align: center;
         text-transform: uppercase; }
-
-@media screen and (max-width: 400px) {
-  .eff-button {
-    font-size: 1rem !important; } }
+  .modal-content #frame1 {
+    line-height: 2.5rem;
+    visibility: visible;
+    display: block; }
+    .modal-content #frame1 span img {
+      margin: -10rem 0 4rem -13rem;
+      height: auto;
+      width: 150%; }
+    .modal-content #frame1 p.atnt {
+      padding: 0 2rem 2rem 0;
+      float: left; }
+      .modal-content #frame1 p.atnt img {
+        height: auto;
+        width: 200px; }
+    .modal-content #frame1 .button-container .button-text {
+      font-size: 1.5rem; }
+  .modal-content #frame2 {
+    display: none; }
+    .modal-content #frame2 p span {
+      font-size: 3rem;
+      font-weight: 900; }
+  @media screen and (max-width: 400px) {
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      clear: both;
+      font-size: 1.75rem; }
+    .modal-content #frame1 span img {
+      margin: -4.5rem 0 4rem -1rem;
+      max-width: 300px; }
+    .modal-content #frame1 .button-container .eff-button {
+      font-size: 1.2rem; } }
 
 /*# sourceMappingURL=netneutrality.css.map */
