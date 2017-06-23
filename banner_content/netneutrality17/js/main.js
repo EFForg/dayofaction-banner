@@ -4,52 +4,54 @@ $(window).on('load',function(){
     $('#frame2').show("fast");
     $('.real').css("display","block");
     $('.fake').css("display","none");
-  }
+    $('body').on('click',function(event) {
+      closeModal();
+    });
+}
 
-  function closeModal(){
-    $('#dayofaction').modal('hide');
-  }
 
-  $('#dayofaction').modal({
-    show : true,
-    keyboard : true,
-    backdrop : "static"
-  });
+function closeModal(){
+  $('#dayofaction').modal('hide');
+}
 
-if ($('#frame1:visible')) {
-  //alert('see it');
+$('#dayofaction').modal({
+  show : true,
+  keyboard : true,
+  backdrop : "static"
+});
+
+if ( $('#frame2').css('display') == 'none') {
+  //if ($('#frame2').is(':not(:visible)'))  {
+  //alert('frame1');
   $('body').on('click',function(event) {
-    $('#dayofaction').modal('show');
+    //$('#dayofaction').modal('show');
     dayShow2();
   });
 }
 
-if ($('#frame1:hidden')) {
-  alert('dont see it');
-  $('body').on('click',function(event) {
-    $('#dayofaction').modal('hide');
-  });
-}
 
+timer = window.setTimeout(function(e) {
+  dayShow2();
+}, 8000);
 
+timer = window.setTimeout(function(e) {
+  closeModal();
+}, 20000);
+
+$('#frame1').on('mouseover', function(event) {
   timer = window.setTimeout(function(e) {
-    closeModal();
-  }, 20000);
-
-  $('#frame1').on('mouseover', function(event) {
-    timer = window.setTimeout(function() {
-      dayShow2();
-    }, 2000);
-  });
-
-  $('#frame1').click(function (e) {
-    e.defaultPrevented;
     dayShow2();
-  });
+  }, 2000);
+});
 
-  $('.fake').click(function (e) {
-    e.defaultPrevented;
-    dayShow2();
-  });
+//$('#frame1').click(function (e) {
+//  e.defaultPrevented;
+//  dayShow2();
+//});
+
+//$('.fake').click(function (e) {
+//  e.defaultPrevented;
+//  dayShow2();
+//});
 
 });
