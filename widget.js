@@ -208,16 +208,6 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
         // Create a spacer to prevent the container from covering up
         // parts of the containing page when minimized
-
-        if (document.getElementById("campaign-spacer"))
-          document.body.removeChild(document.getElementById("campaign-spacer"));
-
-        if (document.getElementById("campaign-container"))
-          document.body.removeChild(document.getElementById("campaign-container"));
-
-        if (document.getElementById("campaign-container-overlay"))
-          document.body.removeChild(document.getElementById("campaign-container-overlay"));
-
         var campaignSpacer = document.createElement('div');
         window.campaignSpacer = campaignSpacer;
         campaignSpacer.style.cssText = style.campaignSpacer;
@@ -326,8 +316,15 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
           }
 
           // Append Iframe and campaign container to document
+          if (document.getElementById("campaign-spacer"))
+            document.body.removeChild(document.getElementById("campaign-spacer"));
+
+          if (document.getElementById("campaign-container"))
+            document.body.removeChild(document.getElementById("campaign-container"));
+
           campaignContainer.appendChild(iframeContainer);
           iframeContainer.appendChild(iframe);
+
           document.body.appendChild(campaignSpacer);
           document.body.appendChild(campaignContainer);
         } else if (campaign.type == 'popup') {
@@ -365,6 +362,10 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
           iframeContainer.appendChild(iframe);
           overlayContainer.appendChild(campaignSpacer);
           overlayContainer.appendChild(campaignContainer);
+
+          if (document.getElementById("campaign-container-overlay"))
+            document.body.removeChild(document.getElementById("campaign-container-overlay"));
+
           document.body.appendChild(overlayContainer);
 
           document.getElementsByTagName('body')[0].style.overflow = 'hidden';
