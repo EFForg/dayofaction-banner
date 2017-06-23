@@ -31,6 +31,15 @@ a:hover {
   text-decoration: none;
 }
 
+.fade { // speed up of fade  when closing modal
+  opacity: 0;
+  -webkit-transition: opacity 0s linear !important;
+     -moz-transition: opacity 0s linear !important;
+      -ms-transition: opacity 0s linear !important;
+       -o-transition: opacity 0s linear !important;
+          transition: opacity 0s linear !important;
+}
+
 /* Modal content */
 .modal-content {
   .modal-header {
@@ -44,7 +53,6 @@ a:hover {
   .real {
     display: none;
   }
-
 
   #frame1,
   #frame2 {
@@ -106,7 +114,7 @@ a:hover {
     visibility: visible;
     display:block;
     span img { // "blocked" image
-      margin: -10rem 0 4rem -13rem;
+      margin: -4rem 0 0 -13rem;
       height: auto;
       width:150%;
     }

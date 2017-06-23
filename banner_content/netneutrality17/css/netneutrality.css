@@ -17,6 +17,14 @@ body {
 a:hover {
   text-decoration: none; }
 
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0s linear !important;
+  -moz-transition: opacity 0s linear !important;
+  -ms-transition: opacity 0s linear !important;
+  -o-transition: opacity 0s linear !important;
+  transition: opacity 0s linear !important; }
+
 /* Modal content */
 .modal-content {
   /* buttons */ }
@@ -84,7 +92,7 @@ a:hover {
     visibility: visible;
     display: block; }
     .modal-content #frame1 span img {
-      margin: -10rem 0 4rem -13rem;
+      margin: -4rem 0 0 -13rem;
       height: auto;
       width: 150%; }
     .modal-content #frame1 p.atnt {
