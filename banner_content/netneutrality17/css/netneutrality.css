@@ -123,4 +123,17 @@ a:hover {
     .modal-content #frame2 p span {
       font-size: 2.5rem; } }
 
+
+.modal-open .modal {
+  overflow-y: hidden !important;
+}
+
+.modal-backdrop {
+  display: none !important;
+}
+
+body {
+  background: transparent !important;
+}
+
 /*# sourceMappingURL=netneutrality.css.map */
