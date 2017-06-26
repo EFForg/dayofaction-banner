@@ -4,13 +4,6 @@ $(window).on('load',function(){
     $('#frame2').show("fast");
     $('.real').css("display","block");
     $('.fake').css("display","none");
-    $('body').on('click',function(event) {
-      closeModal();
-    });
-  }
-
-  function closeModal(){
-    $('#dayofaction').modal('hide');
   }
 
   $('#dayofaction').modal({
@@ -25,13 +18,10 @@ $(window).on('load',function(){
     });
   }
 
-  timer = window.setTimeout(function(e) { // if no action taken, switch to frame2 after 8 seconds
+
+  var timer = window.setTimeout(function(e) { // if no action taken, switch to frame2 after 8 seconds
     dayShow2();
   }, 8000);
-
-  timer = window.setTimeout(function(e) { // if no action taken, close modal after 22 seconds
-    closeModal();
-  }, 22000);
 
   $('#frame1').on('mouseover', function(event) { // if user clicks on frame1, immediately switch to frame2
       dayShow2();

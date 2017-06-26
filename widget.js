@@ -165,24 +165,24 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
       },
       size: {
         desktop: {
-          height: '300px',
-          width: '350px'
+          height: '680px',
+          width: '830px'
         },
         mobile: {
-          height: '300px',
+          height: '400px',
           width: '350px'
         }
       },
       styles: {
         banner: {
-          iframeContainer: 'position: fixed; top: 50%; left: 50%; margin-left: -150px; margin-top: -150px',
-          iframe: 'width: 100%; height: 100%; border: 0; margin: 0;  padding: 0; background: #08A013;',
-          closeButton: 'border: 0; height: 26px; width: 26px; ' +
-            'cursor: pointer; position: absolute; top: 20px; right: 20px; ' +
-            'background: url("' + asset_url + 'imgs/close-button.png") no-repeat right top;',
+          iframeContainer: 'position: fixed; top: 50%; left: 50%; margin-left: -415px; margin-top: -340px',
+          iframe: 'width: 100%; height: 100%; border: 0; margin: 0;  padding: 0; background: transparent',
+          closeButton: 'border: 0; height: 40px; width: 40px; ' +
+            'cursor: pointer; position: absolute; top: 45px; right: 132px; opacity: 0.6;' +
+            'background: url("' + asset_url + 'imgs/close-button.png") no-repeat right top; background-size: 100%;',
           mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
             'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
-            'background: url("' + asset_url + 'imgs/close-button-mobile.png") no-repeat right top;',
+            'background: url("' + asset_url + 'imgs/close-button-mobile.png") no-repeat right top; background-size: 100%;',
         }
       },
       fullSize: true,
@@ -338,7 +338,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
           var overlayContainer = document.createElement('div');
           overlayContainer.id = 'campaign-container-overlay';
-          overlayContainer.style = 'position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.6); '+
+          overlayContainer.style = 'position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.5); '+
                                    'width: 100%; height: 100%; ';
 
           var closeModal = function() {
