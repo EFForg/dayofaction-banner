@@ -169,8 +169,8 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
           width: '830px'
         },
         mobile: {
-          height: '400px',
-          width: '350px'
+          height: '615px',
+          width: '400px'
         }
       },
       styles: {
