@@ -175,6 +175,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
       },
       styles: {
         banner: {
+          campaignContainer: 'z-index: 10000',
           iframeContainer: 'position: fixed; top: 50%; left: 50%; margin-left: -415px; margin-top: -340px',
           iframe: 'width: 100%; height: 100%; border: 0; margin: 0;  padding: 0; background: transparent',
           closeButton: 'border: 0; height: 40px; width: 40px; ' +
