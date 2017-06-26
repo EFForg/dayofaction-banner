@@ -34,9 +34,7 @@ $(window).on('load',function(){
   }, 22000);
 
   $('#frame1').on('mouseover', function(event) { // if user clicks on frame1, immediately switch to frame2
-    timer = window.setTimeout(function(e) {
       dayShow2();
-    }, 2000);
   });
 
 
