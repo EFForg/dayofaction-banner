@@ -54,3 +54,10 @@ You can configure the banner using a javascript object:
 </script>
 <!--<![endif]-->
 ```
+
+## Plugins
+
+These plugins make it super easy to embed the snippet in your site:
+
+* Drupal: https://www.drupal.org/project/eff_action
+* ...
