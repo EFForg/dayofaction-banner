@@ -306,7 +306,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
           document.body.appendChild(campaignSpacer);
           document.body.appendChild(campaignContainer);
         } else if (campaign.type == 'popup') {
-          iframe.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: transparent';
+          iframe.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; background: transparent';
 
           var closeModal = function() {
             iframe.style.display = 'none';
