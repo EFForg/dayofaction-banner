@@ -9,14 +9,19 @@ $(window).on('load',function(){
   $('#dayofaction').modal({
     show : true,
     keyboard : true,
-    backdrop : "static" // backdrop is static so we can control when modal switches and closes
+    backdrop : "static", // backdrop is static so we can control when modal switches and closes
+  }).on("hidden.bs.modal", function() {
+    window.parent.postMessage("eff-doa-closeModal", "*");
   });
 
-  if ( $('#frame2').css('display') == 'none') { //clicking anywhere when frame2 is hidden switches modal to frame2
-    $('body').on('click',function(event) {
+  // clicking anywhere when frame2 is hidden switches modal to frame2
+  // otherwise close the modal
+  $('body').on('click',function(event) {
+    if ($('#frame2').css('display') == 'none')
       dayShow2();
-    });
-  }
+    else
+      $('#dayofaction').modal('hide');
+  });
 
 
   var timer = window.setTimeout(function(e) { // if no action taken, switch to frame2 after 8 seconds
@@ -26,6 +31,4 @@ $(window).on('load',function(){
   $('#frame1').on('mouseover', function(event) { // if user clicks on frame1, immediately switch to frame2
     dayShow2();
   });
-
-
 });
