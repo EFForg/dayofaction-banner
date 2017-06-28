@@ -18,14 +18,13 @@ $(window).on('load',function(){
     });
   }
 
-
   var timer = window.setTimeout(function(e) { // if no action taken, switch to frame2 after 8 seconds
     dayShow2();
   }, 8000);
 
-  $('#frame1').on('mouseover', function(event) { // if user clicks on frame1, immediately switch to frame2
-    dayShow2();
+  $('#frame1').on('mouseover', function(event) { // if user clicks on frame1,  switch to frame2
+    timer = window.setTimeout(function(e) {
+      dayShow2();
+    }, 3000);
   });
-
-
 });
