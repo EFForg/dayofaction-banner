@@ -6,7 +6,9 @@ dayofaction-banner is a javascript snippet that automatically activates at midni
 
 **If you own a website, no matter how big or small, you can be part of this.**
 
-<a href="https://efforg.github.io/dayofaction-banner/example/banner.html" target="_blank"><img src="screenshots/banner-screenshot.png" alt="Banner Screenshot" /></a>
+<a href="https://efforg.github.io/dayofaction-banner/example/banner.html" target="_blank"><img src="screenshots/DoA-snap-1.png" alt="Day of Action screenshot 1" /></a>
+
+<a href="https://efforg.github.io/dayofaction-banner/example/banner.html" target="_blank"><img src="screenshots/DoA-snap-2.png" alt="Day of Action screenshot 2" /></a>
 
 ## Demo page
 
@@ -54,3 +56,10 @@ You can configure the banner using a javascript object:
 </script>
 <!--<![endif]-->
 ```
+
+## Plugins
+
+These plugins make it super easy to embed the snippet in your site:
+
+* Drupal: https://www.drupal.org/project/eff_action
+* ...

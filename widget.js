@@ -163,29 +163,6 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
         month: 7, // Use natural month, e.g. January = 1
         year: 2017
       },
-      size: {
-        desktop: {
-          height: '680px',
-          width: '830px'
-        },
-        mobile: {
-          height: '400px',
-          width: '350px'
-        }
-      },
-      styles: {
-        banner: {
-          iframeContainer: 'position: fixed; top: 50%; left: 50%; margin-left: -415px; margin-top: -340px',
-          iframe: 'width: 100%; height: 100%; border: 0; margin: 0;  padding: 0; background: transparent',
-          closeButton: 'border: 0; height: 40px; width: 40px; ' +
-            'cursor: pointer; position: absolute; top: 45px; right: 132px; opacity: 0.6;' +
-            'background: url("' + asset_url + 'imgs/close-button.png") no-repeat right top; background-size: 100%;',
-          mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
-            'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
-            'background: url("' + asset_url + 'imgs/close-button-mobile.png") no-repeat right top; background-size: 100%;',
-        }
-      },
-      fullSize: true,
       minimized: false,
       show: function (options) { }
     }
@@ -204,41 +181,9 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
     checks.correctDate(campaign, function(response) {
       if (response.activeToday) {
-        var style = campaign.styles[widgetConfig.show_style];
-
-        // Create a spacer to prevent the container from covering up
-        // parts of the containing page when minimized
-
-        if (document.getElementById("campaign-spacer"))
-          document.body.removeChild(document.getElementById("campaign-spacer"));
-
-        if (document.getElementById("campaign-container"))
-          document.body.removeChild(document.getElementById("campaign-container"));
-
-        if (document.getElementById("campaign-container-overlay"))
-          document.body.removeChild(document.getElementById("campaign-container-overlay"));
-
-        var campaignSpacer = document.createElement('div');
-        window.campaignSpacer = campaignSpacer;
-        campaignSpacer.style.cssText = style.campaignSpacer;
-        campaignSpacer.setAttribute("id", "campaign-spacer");
-        campaignSpacer.setAttribute("class", "campaign-spacer");
-
-        // Create a container
-        var campaignContainer = document.createElement('div');
-        window.campaignContainer = campaignContainer;
-        campaignContainer.style.cssText = style.campaignContainer;
-        campaignContainer.setAttribute("id", "campaign-container");
-        campaignContainer.setAttribute("class", "campaign-container");
-
-        // Create a container for the iframe so we can do padding and
-        // border-radius properly
-        var iframeContainer = document.createElement('div');
-        iframeContainer.style.cssText = style.iframeContainer;
-
         var firstTime = !!cookie && campaign.fullSize;
         var iframe = document.createElement('iframe');
-        iframe.style.cssText = style.iframe;
+        iframe.id = 'eff-campaign-iframe';
         iframe.src = asset_url + widgetConfig.show_style + '.html?firstTime=' + firstTime;
 
         var e = document.documentElement,
@@ -248,6 +193,29 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
         campaign.fullSize = x >= 767;
 
         if (campaign.type == 'banner') {
+          var style = campaign.styles[widgetConfig.show_style];
+          iframe.style.cssText = style.iframe;
+
+          // Create a spacer to prevent the container from covering up
+          // parts of the containing page when minimized
+          var campaignSpacer = document.createElement('div');
+          window.campaignSpacer = campaignSpacer;
+          campaignSpacer.style.cssText = style.campaignSpacer;
+          campaignSpacer.setAttribute("id", "campaign-spacer");
+          campaignSpacer.setAttribute("class", "campaign-spacer");
+
+          // Create a container
+          var campaignContainer = document.createElement('div');
+          window.campaignContainer = campaignContainer;
+          campaignContainer.style.cssText = style.campaignContainer;
+          campaignContainer.setAttribute("id", "campaign-container");
+          campaignContainer.setAttribute("class", "campaign-container");
+
+          // Create a container for the iframe so we can do padding and
+          // border-radius properly
+          var iframeContainer = document.createElement('div');
+          iframeContainer.style.cssText = style.iframeContainer;
+
           if (campaign.fullSize) {
             // Find out if user has minimized via cookie
             if (campaign.minimized) {
@@ -326,23 +294,22 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
           }
 
           // Append Iframe and campaign container to document
+          if (document.getElementById("campaign-spacer"))
+            document.body.removeChild(document.getElementById("campaign-spacer"));
+
+          if (document.getElementById("campaign-container"))
+            document.body.removeChild(document.getElementById("campaign-container"));
+
           campaignContainer.appendChild(iframeContainer);
           iframeContainer.appendChild(iframe);
+
           document.body.appendChild(campaignSpacer);
           document.body.appendChild(campaignContainer);
         } else if (campaign.type == 'popup') {
-          // Setup a close button
-          var closeButton = document.createElement('button');
-          closeButton.style.cssText = campaign.fullSize ? style.closeButton : style.mobileCloseButton;
-          iframeContainer.appendChild(closeButton);
-
-          var overlayContainer = document.createElement('div');
-          overlayContainer.id = 'campaign-container-overlay';
-          overlayContainer.style = 'position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.5); '+
-                                   'width: 100%; height: 100%; ';
+          iframe.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: transparent';
 
           var closeModal = function() {
-            overlayContainer.style.display = 'none';
+            iframe.style.display = 'none';
             document.getElementsByTagName('body')[0].style.overflow = null;
             setCookie(campaign.cookieName, '{"minimized": true}', widgetConfig.cookieTimeout);
           };
@@ -352,24 +319,10 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
             closeModal();
           });
 
-          closeButton.onclick = closeModal;
-          overlayContainer.onclick = closeModal;
+          if (document.getElementById("eff-campaign-iframe"))
+            document.body.removeChild(document.getElementById("eff-campaign-iframe"));
 
-          var iframeSize = campaign.fullSize ? campaign.size.desktop : campaign.size.mobile;
-          iframeContainer.style.position = 'absolute';
-          iframeContainer.style.top = '50%';
-          iframeContainer.style.left = '50%';
-          iframeContainer.style.marginTop = 'calc(-'+iframeSize.height+'/2)';
-          iframeContainer.style.marginLeft = 'calc(-'+iframeSize.width+'/2)';
-          iframeContainer.style.height = iframeSize.height;
-          iframeContainer.style.width = iframeSize.width;
-
-          // Append Iframe and campaign container to document
-          campaignContainer.appendChild(iframeContainer);
-          iframeContainer.appendChild(iframe);
-          overlayContainer.appendChild(campaignSpacer);
-          overlayContainer.appendChild(campaignContainer);
-          document.body.appendChild(overlayContainer);
+          document.body.appendChild(iframe);
 
           document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         }
