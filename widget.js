@@ -194,6 +194,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
         if (campaign.type == 'banner') {
           var style = campaign.styles[widgetConfig.show_style];
+          iframe.style.cssText = style.iframe;
 
           // Create a spacer to prevent the container from covering up
           // parts of the containing page when minimized
