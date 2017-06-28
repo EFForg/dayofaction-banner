@@ -108,17 +108,13 @@ a:hover {
     .modal-content #frame2 p span {
       font-size: 3rem;
       font-weight: 900; }
-  @media screen and (max-width: 766px) {
-    .modal-content #frame1 {
-      text-align: center; }
-    .modal-content #frame1 p.atnt {
-      float: none; }
+  @media screen and (max-width: 401px) {
     .modal-content #frame1 p,
     .modal-content #frame2 p {
       clear: both;
       font-size: 1.75rem; }
     .modal-content #frame1 span img {
-      margin: 0 0 4rem 0;
+      margin: -3.0rem 0 4rem -1rem;
       max-width: 300px; }
     .modal-content #frame1 .button-container .eff-button {
       font-size: 1.2rem; }
@@ -126,18 +122,5 @@ a:hover {
       font-size: 1.5rem; }
     .modal-content #frame2 p span {
       font-size: 2.5rem; } }
-
-
-.modal-open .modal {
-  overflow-y: hidden !important;
-}
-
-.modal-backdrop {
-  display: none !important;
-}
-
-body {
-  background: transparent !important;
-}
 
 /*# sourceMappingURL=netneutrality.css.map */
