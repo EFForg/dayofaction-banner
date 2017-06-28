@@ -22,9 +22,19 @@ $(window).on('load',function(){
     dayShow2();
   }, 8000);
 
+  var timer = window.setTimeout(function(e) { // if no action taken, close modal after 22 seconds
+    window.parent.postMessage("eff-doa-closeModal", "*");
+  }, 22000);
+
   $('#frame1').on('mouseover', function(event) { // if user clicks on frame1,  switch to frame2
     timer = window.setTimeout(function(e) {
       dayShow2();
-    }, 3000);
+    }, 2000);
   });
+
+  $('#frame2').on('click', function(event) { // close modal
+    window.parent.postMessage("eff-doa-closeModal", "*");
+  });
+
+
 });
