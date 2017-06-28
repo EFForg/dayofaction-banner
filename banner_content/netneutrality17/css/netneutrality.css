@@ -132,10 +132,6 @@ a:hover {
   overflow-y: hidden !important;
 }
 
-.modal-backdrop {
-  display: none !important;
-}
-
 body {
   background: transparent !important;
 }
