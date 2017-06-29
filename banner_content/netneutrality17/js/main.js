@@ -31,10 +31,10 @@ $(window).on('load',function(){
     window.parent.postMessage("eff-doa-closeModal", "*");
   }, 22000);
 
-  $('#frame1').on('mouseover', function(event) { // if user clicks on frame1,  switch to frame2
+  $('#frame1').on('mouseover', function(event) { // if user mousesover on frame1,  switch to frame2
     timer = window.setTimeout(function(e) {
       dayShow2();
-    }, 2000);
+    }, 3000);
   });
 
   $('#frame2').on('click', function(event) { // close modal
