@@ -1,12 +1,12 @@
 /*
 
-     ______   ______   ______ 
+     ______   ______   ______
     |  ____| |  ____| |  ____|
-    | |__    | |__    | |__   
-    |  __|   |  __|   |  __|  
-    | |____  | |      | |     
-    |______| |_|      |_|     
-                              
+    | |__    | |__    | |__
+    |  __|   |  __|   |  __|
+    | |____  | |      | |
+    |______| |_|      |_|
+
   =============================================================================
 
   Support the Net Neutrality Day of Action campaign by installing this banner on your site.
@@ -316,7 +316,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
 
           window.addEventListener("message", function(event) {
             if (event.data == "eff-doa-closeModal")
-              closeModal();
+            closeModal();
           });
 
           if (document.getElementById("eff-campaign-iframe"))

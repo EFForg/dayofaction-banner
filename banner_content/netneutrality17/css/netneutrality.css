@@ -109,6 +109,24 @@ a:hover {
     .modal-content #frame2 p span {
       font-size: 3rem;
       font-weight: 900; }
+
+  @media screen and (max-width: 401px) {
+    .modal-content #frame1 p,
+    .modal-content #frame2 p {
+      clear: both;
+      font-size: 1.75rem; }
+    .modal-content #frame1 span img {
+      margin: -3.0rem 0 4rem -1rem;
+      max-width: 300px; }
+    .modal-content #frame1 .button-container .eff-button {
+      font-size: 1.2rem; }
+    .modal-content #frame2 .button-container .button-text {
+      font-size: 1.5rem; }
+    .modal-content #frame2 p span {
+      font-size: 2.5rem; } }
+
+/*# sourceMappingURL=netneutrality.css.map */
+
   @media screen and (max-width: 766px) {
     .modal-content {
       text-align: center; }
