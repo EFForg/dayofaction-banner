@@ -69,8 +69,11 @@ $black: #000000;
         text-align: center;
         img {
           height: auto;
-          width:150px;
+          width:250px;
         }
+      }
+      p.eff-logo img{
+        width:150px
       }
       .button-container{
         text-align: center;
@@ -141,60 +144,63 @@ $black: #000000;
 
     @media screen and (max-width: 766px) {
       text-align: center;
-      .modal-header {
-        padding: 0;
-      }
       .modal-body {
-        padding: 0;
+        padding: 1rem;
+      }
+      p.atnt {
+        float: none !important;
       }
 
-      #frame1 p,
-      #frame2 p {
-        clear:both;
-        font-size:1.3rem;
-        line-height: 1.7rem;
+      .eff-button {
+        display: inline-block;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      #frame1,
+      #frame2 {
         padding: 0;
+        p {
+          clear:both;
+          font-size:1.3rem;
+          line-height: 1.8rem;
+        }
       }
 
       #frame1 {
-        p.atnt {
-          float: none;
-          margin: 0 auto 1rem;
-          padding:0 ;
-          img {
-            width: 150px;
-          }
-        }
         span img { /* "blocked" image */
-          margin: 0 0 1rem;
+          margin: 0 0 4rem;
+          padding-left:-4rem;
           max-width:300px;
-
+          width: 100%;
         }
+
         .button-container .eff-button {
           font-size:1.2rem;
         }
+        .button-container .button-text {
+          font-size:1.2rem;
+        }
       }
-
       #frame2  {
+        .button-container .eff-button {
+          font-size:1.7rem;
+        }
+        .button-container .button-text {
+          font-size:1.3rem;
+        }
         p span {
           font-size:2.5rem;
         }
         p.eff-logo {
-          padding-bottom:0;
+          padding-bottom:2rem;
           img {
-            height: auto;
             width:100px;
           }
         }
-        .button-container .eff-button {
-          display: inline-block;
-          font-size: 2.1rem;
-        }
-        .button-container .button-text {
-          font-size:1.5rem;
-        }
       }
-
     }
   }
 
