@@ -52,10 +52,7 @@ a:hover {
       .modal-content #frame1 p.eff-logo img,
       .modal-content #frame2 p.eff-logo img {
         height: auto;
-        width: 250px; }
-    .modal-content #frame1 p.eff-logo img,
-    .modal-content #frame2 p.eff-logo img {
-      width: 150px; }
+        width: 150px; }
     .modal-content #frame1 .button-container,
     .modal-content #frame2 .button-container {
       text-align: center;
@@ -109,45 +106,45 @@ a:hover {
     .modal-content #frame2 p span {
       font-size: 3rem;
       font-weight: 900; }
-
-  @media screen and (max-width: 401px) {
-    .modal-content #frame1 p,
-    .modal-content #frame2 p {
-      clear: both;
-      font-size: 1.75rem; }
-    .modal-content #frame1 span img {
-      margin: -3.0rem 0 4rem -1rem;
-      max-width: 300px; }
-    .modal-content #frame1 .button-container .eff-button {
-      font-size: 1.2rem; }
-    .modal-content #frame2 .button-container .button-text {
-      font-size: 1.5rem; }
-    .modal-content #frame2 p span {
-      font-size: 2.5rem; } }
-
-/*# sourceMappingURL=netneutrality.css.map */
-
   @media screen and (max-width: 766px) {
     .modal-content {
       text-align: center; }
-      .modal-content p.atnt {
-        float: none !important; }
-      .modal-content .eff-button {
-        display: inline-block; }
+      .modal-content .modal-header {
+        padding: 0; }
+      .modal-content .modal-body {
+        padding: 0; }
       .modal-content #frame1 p,
       .modal-content #frame2 p {
         clear: both;
-        font-size: 1.75rem; }
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+        padding: 0; }
+      .modal-content #frame1 p.atnt {
+        float: none;
+        margin: 0 auto 1rem;
+        padding: 0; }
+        .modal-content #frame1 p.atnt img {
+          width: 150px; }
       .modal-content #frame1 span img {
         /* "blocked" image */
-        margin: 0 0 4rem 0;
+        margin: 0 0 1rem;
         max-width: 300px; }
       .modal-content #frame1 .button-container .eff-button {
         font-size: 1.2rem; }
-      .modal-content #frame2 .button-container .button-text {
-        font-size: 1.5rem; }
       .modal-content #frame2 p span {
-        font-size: 2.5rem; } }
+        font-size: 2.5rem; }
+      .modal-content #frame2 p.eff-logo {
+        padding-bottom: 0; }
+        .modal-content #frame2 p.eff-logo img {
+          height: auto;
+          width: 100px; }
+      .modal-content #frame2 .button-container .eff-button {
+        display: inline-block;
+        font-size: 2.1rem; }
+      .modal-content #frame2 .button-container .button-text {
+        font-size: 1.5rem; } }
 
 .modal-open .modal {
   overflow-y: hidden !important; }
+
+/*# sourceMappingURL=netneutrality.css.map */
