@@ -109,7 +109,7 @@ a:hover {
     .modal-content #frame2 p span {
       font-size: 3rem;
       font-weight: 900; }
-<<<<<<< HEAD
+
   @media screen and (max-width: 401px) {
     .modal-content #frame1 p,
     .modal-content #frame2 p {
@@ -126,7 +126,7 @@ a:hover {
       font-size: 2.5rem; } }
 
 /*# sourceMappingURL=netneutrality.css.map */
-=======
+
   @media screen and (max-width: 766px) {
     .modal-content {
       text-align: center; }
@@ -151,4 +151,3 @@ a:hover {
 
 .modal-open .modal {
   overflow-y: hidden !important; }
->>>>>>> dc3f70c9613b6bbfa567c535bdbe7c372fb59733
