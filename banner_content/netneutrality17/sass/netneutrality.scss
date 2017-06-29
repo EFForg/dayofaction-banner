@@ -69,11 +69,8 @@ $black: #000000;
         text-align: center;
         img {
           height: auto;
-          width:250px;
+          width:150px;
         }
-      }
-      p.eff-logo img{
-        width:150px
       }
       .button-container{
         text-align: center;
@@ -141,37 +138,63 @@ $black: #000000;
         }
       }
     }
+
     @media screen and (max-width: 766px) {
       text-align: center;
-
-      p.atnt {
-        float: none !important;
+      .modal-header {
+        padding: 0;
       }
-
-      .eff-button {
-        display: inline-block;
+      .modal-body {
+        padding: 0;
       }
 
       #frame1 p,
       #frame2 p {
         clear:both;
-        font-size:1.75rem;
+        font-size:1.3rem;
+        line-height: 1.7rem;
+        padding: 0;
       }
-      #frame1 span img { /* "blocked" image */
-        margin: 0 0 4rem 0;
-        max-width:300px;
-      }
-      #frame1 .button-container .eff-button {
-        font-size:1.2rem;
-      }
-      #frame2  {
-        .button-container .button-text {
-          font-size:1.5rem;
+
+      #frame1 {
+        p.atnt {
+          float: none;
+          margin: 0 auto 1rem;
+          padding:0 ;
+          img {
+            width: 150px;
+          }
         }
+        span img { /* "blocked" image */
+          margin: 0 0 1rem;
+          max-width:300px;
+
+        }
+        .button-container .eff-button {
+          font-size:1.2rem;
+        }
+      }
+
+      #frame2  {
         p span {
           font-size:2.5rem;
         }
+        p.eff-logo {
+          padding-bottom:0;
+          img {
+            height: auto;
+            width:100px;
+          }
+        }
+        .button-container .eff-button {
+          display: inline-block;
+          font-size: 2.1rem;
+        }
+        .button-container .button-text {
+          font-size:1.5rem;
+        }
       }
+
     }
   }
 
