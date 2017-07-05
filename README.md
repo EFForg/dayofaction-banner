@@ -18,7 +18,7 @@ dayofaction-banner is a javascript snippet that automatically activates at midni
 
 ## Getting started
 
-You can add the snippet to your site now - it won't be activated until midnight (user's system time) on June 21st and will remain active for that day only.
+You can add the snippet to your site now - it won't be activated until midnight (user's system time) on July 12 and will remain active for that day only.
 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
