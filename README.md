@@ -2,7 +2,7 @@
 
 _Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](https://github.com/EFForg/dayofaction-banner/issues) page._
 
-dayofaction-banner is a javascript snippet that automatically activates at midnight of July 12 and adds a banner to your site for 24 hours in support of the net neutrality [Day of Action](https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality).
+dayofaction-banner/netneutrality17 is a javascript snippet that automatically activates at midnight of July 12 and adds a banner to your site for 24 hours in support of the net neutrality [Day of Action](https://www.eff.org/deeplinks/2017/06/eff-and-broad-coalition-call-day-action-defend-net-neutrality).
 
 **If you own a website, no matter how big or small, you can be part of this.**
 
@@ -12,9 +12,9 @@ dayofaction-banner is a javascript snippet that automatically activates at midni
 
 ## Demo page
 
-<a href="https://efforg.github.io/dayofaction-banner/example/banner.html">This page</a> shows what the banner will look like on the day of action. 
+<a href="https://efforg.github.io/dayofaction-banner/example/banner.html">This page</a> shows what the banner will look like on the day of action.
 
-*Note: Please don't copy the code from the source files of the demo pages. Use the code below instead.* 
+*Note: Please don't copy the code from the source files of the demo pages. Use the code below instead.*
 
 ## Getting started
 
@@ -42,7 +42,7 @@ You can configure the banner using a javascript object:
 
 ```html
 <!--[if !(lt IE 8)]><!-->
-<script type="text/javascript"> 
+<script type="text/javascript">
   // The defaults are set below
   var banner_config = {
     disableDate: false, // If true, the banner shows even if the date is not yet 06/21/2016. Use for testing.
