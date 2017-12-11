@@ -160,7 +160,7 @@ var _banner_config = (typeof banner_config  !== 'undefined') ? banner_config  : 
       cookieName: 'netneutrality17_hasseen',
       runDate: {
         day: 12,
-        month: 7, // Use natural month, e.g. January = 1
+        month: 12, // Use natural month, e.g. January = 1
         year: 2017
       },
       minimized: false,

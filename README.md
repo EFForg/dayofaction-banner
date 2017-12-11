@@ -18,7 +18,7 @@ dayofaction-banner/netneutrality17 is a javascript snippet that automatically ac
 
 ## Getting started
 
-You can add the snippet to your site now - it won't be activated until midnight (user's system time) on July 12 and will remain active for that day only.
+You can add the snippet to your site now - it won't be activated until midnight (user's system time) on December 12 and will remain active for that day only.
 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
